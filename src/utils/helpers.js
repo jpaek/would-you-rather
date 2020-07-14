@@ -15,6 +15,7 @@ export function formatQuestion (question, author, authedUser) {
     optionOne,
     optionTwo,
     hasVoted: authedUser.answers.hasOwnProperty(id),
+    currentUserVote: authedUser.answers[id],
     optionOneVotes: optionOne.votes.length,
     optionTwoVotes: optionTwo.votes.length,
     avatar: avatarURL,

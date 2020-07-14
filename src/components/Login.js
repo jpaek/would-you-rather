@@ -13,7 +13,6 @@ class Login extends Component {
         const selectedUser = document.getElementById("curr_user").value
         const { dispatch } = this.props
         dispatch(setAuthedUser(selectedUser))
-        this.props.history.push('/')
     }
 
     render() {

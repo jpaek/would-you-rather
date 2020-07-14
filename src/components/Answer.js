@@ -31,7 +31,6 @@ class Answer extends Component {
       answer: '',
       enableSubmit: false
     }))
-    this.props.history.push('/')
   }
   render() {
     const { enableSubmit } = this.state

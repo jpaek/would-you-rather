@@ -7,7 +7,7 @@ class Result extends Component {
   render() {
     const { question } = this.props
     const {
-      name, avatar, optionOne, optionTwo,
+      name, avatar, optionOne, optionTwo, currentUserVote,
       optionOneVotes, optionTwoVotes, totalVotes
     } = question
 
@@ -21,10 +21,10 @@ class Result extends Component {
           <div className='question-info'>
             <div>
               <span>Would you rather...</span>
-              <p>{optionOne.text}...</p>
-              <p>{optionOneVotes}</p>
-              <p>{optionTwo.text}...</p>
-              <p>{optionTwoVotes}</p>
+              <p>{currentUserVote === 'optionOne' ? (<span className="active">{optionOne.text} (voted by {name})</span>) : optionOne.text }
+              ... {`Percentage of Votes ${(optionOneVotes/totalVotes) * 100}% (${optionOneVotes} votes)`}</p>
+              <p>{currentUserVote === 'optionTwo' ? (<span className="active">{optionTwo.text} (voted)</span>) : optionTwo.text }
+              ... {`Percentage of Votes ${(optionTwoVotes/totalVotes) * 100}% (${optionTwoVotes} votes)`}</p>
               <p>Total: {totalVotes}</p>
             </div>
           </div>

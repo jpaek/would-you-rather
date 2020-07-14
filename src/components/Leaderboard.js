@@ -4,7 +4,6 @@ import Leader from './Leader'
 
 class Dashboard extends Component {
   render() {
-    const { users } = this.props
     return (
       <div>
         <h3 className='center'>Leaderboard</h3>
